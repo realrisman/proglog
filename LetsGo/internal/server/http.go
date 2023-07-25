@@ -87,8 +87,8 @@ func (s *httpServer) handleConsume(w http.ResponseWriter, r *http.Request) {
 func NewHTTPServer(addr string) *http.Server {
 	httpsrv := newHTTPServer()
 	r := mux.NewRouter()
-	r.HandleFunc('/', httpsrv.handleProduce).Methods("POST")
-	r.HandleFunc('/', httpsrv.handleConsume).Methods("GET")
+	r.HandleFunc("/", httpsrv.handleProduce).Methods("POST")
+	r.HandleFunc("/", httpsrv.handleConsume).Methods("GET")
 
 	return &http.Server{
 		Addr:    addr,
